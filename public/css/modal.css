@@ -1,0 +1,15 @@
+.deleteModal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  padding-top: 30vh;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.showModal {
+  display: block !important;
+}
