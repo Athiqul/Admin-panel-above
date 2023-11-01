@@ -41,7 +41,7 @@ class Login extends BaseController
 
       $client = \Config\Services::curlrequest();
       $apiUrl=getenv('API_LINK')."/user-auth-request";
-      
+     // dd($apiUrl);
       $postData = [
         "key"=>getenv('API_SECRET'),
         "email"=>$this->request->getVar('email'),

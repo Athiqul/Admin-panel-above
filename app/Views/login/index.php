@@ -37,6 +37,7 @@
                 <h3 class="card-title text-left mb-3 ">Login</h3>
                 <?php if(session()->has('errors')):?>
 <div class="container mt-5">
+  <?php dd(session()->get('errors'))?>
   <?php foreach(session()->get('errors') as $item):?>
     <div
                   class="alert alert-danger alert-dismissible fade show"
