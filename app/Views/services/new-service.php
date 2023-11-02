@@ -1,6 +1,8 @@
 <?= $this->extend('layout/layout') ?>
 <?= $this->section('title') ?>Admin Panel|Above IT<?= $this->endSection() ?>
-
+<?= $this->section('custom-css') ?>
+<script src="https://cdn.tiny.cloud/1/b69tdpiu66ovx82jjhzsf0eooi7hehgia7avmhbdiy1s6rx4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<?= $this->endSection() ?>
 <?= $this->section('navbar') ?>
 <?= $this->include('assets/navbar') ?>
 <?= $this->endSection() ?>
@@ -87,11 +89,11 @@
                         />
                       </div>
                       <div class="form-group">
-                        <label for="desc">Meta Description</label>
+                        <label for="metadesc">Meta Description</label>
                         <textarea
                           rows="5"
                           class="form-control bg-light"
-                          id="desc"
+                          id="metadesc"
                          
                           name="meta_desc"
                           value="<?=esc (old('meta_desc'))?>"
@@ -113,5 +115,15 @@
           <?= $this->endSection() ?>
         <?= $this->section('footer') ?>
         <?= $this->include('assets/footer') ?>
+        <?= $this->endSection() ?>
+
+        <?= $this->section('custom-js') ?>
+        <script>
+  tinymce.init({
+    selector: '#desc',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+  });
+</script>
         <?= $this->endSection() ?>
     

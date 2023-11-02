@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="shortcut icon" href="/images/logo-mini.svg" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- More Css Added  -->
+    <?=$this->renderSection('custom-css')?>
   </head>
 </head>
 
@@ -78,7 +80,7 @@
     <script src="/js/select2.min.js"></script>
     <script src="/js/select2.js"></script>
     <script src="/js/modal.js"></script>
-    
+    <?=$this->renderSection('custom-js')?>
     <!-- End custom js for this page -->
 </body>
 
