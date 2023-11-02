@@ -41,6 +41,10 @@
                         <p class="text-muted"><?=$service->msg->title?></p>
                       </div>
                       <div class="col-lg-6 col-sm-12">
+                        <h4>Sub Title</h4>
+                        <p class="text-muted"><?=$service->msg->sub_title??''?></p>
+                      </div>
+                      <div class="col-lg-6 col-sm-12">
                         <h4>Description</h4>
                         <p class="text-muted">
                          <?=$service->msg->desc?>
@@ -148,4 +152,3 @@
         <?= $this->include('assets/footer') ?>
         <?= $this->endSection() ?>
     
-msg->

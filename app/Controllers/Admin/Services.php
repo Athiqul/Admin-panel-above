@@ -88,6 +88,7 @@ class Services extends BaseController
         $user_id=session()->get('user_id');
         $data=[
             "key"=>getenv('API_SECRET'),
+            "sub_title"=>$this->request->getVar('sub_title'),
             "title"=>$this->request->getVar("title"),
             "user_id"=>$user_id,
             "image"=>$image_link,

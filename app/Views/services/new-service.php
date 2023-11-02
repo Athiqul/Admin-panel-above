@@ -39,6 +39,18 @@
                         />
                       </div>
                       <div class="form-group">
+                        <label for="sub_title">Sub Title</label>
+                        <input
+                          type="text"
+                          class="form-control bg-light"
+                          id="sub_title"
+                          
+                          name="sub_title"
+                          value="<?=esc( old('sub_title'))?>"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
                         <label for="desc">Service Description</label>
                         <textarea
                           rows="5"
