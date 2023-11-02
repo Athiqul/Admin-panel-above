@@ -75,12 +75,12 @@
                           <?php
                           $previous=(int)$current-1;
                           ?>
-                          <a class="nav-link active text-light" href="<?=site_url('/admin/all-products?page='.$previous )?>">Previous</a>
+                          <a class="nav-link active text-light" href="<?=site_url('/admin/blog-list?page='.$previous )?>">Previous</a>
                         </li>
                         <?php endif?>
                         <?php for($i=1;$i<=$page;$i++):?>
                         <li class="nav-item">
-                          <a  class="nav-link text-light<?=($current==$i)?"bg-primary":""?>" href="<?=site_url('/admin/all-products?page='.$i)?>"><?=$i?></a>
+                          <a  class="nav-link text-light<?=($current==$i)?"bg-primary":""?>" href="<?=site_url('/admin/blog-list?page='.$i)?>"><?=$i?></a>
                         </li>
                       <?php endfor?>
                        <?php if((int)$current<(int)$page):?>
@@ -88,7 +88,7 @@
                         <?php
                           $current=(int)$current+1;
                           ?>
-                          <a class="nav-link text-light" href="<?=site_url('/admin/all-products?page='.$current )?>">Next</a>
+                          <a class="nav-link text-light" href="<?=site_url('/admin/blog-list?page='.$current )?>">Next</a>
                         </li>
                         <?php endif?>
                       </ul>

@@ -1,7 +1,9 @@
 
 <?= $this->extend('layout/layout') ?>
 <?= $this->section('title') ?>Admin Panel|Above IT<?= $this->endSection() ?>
-
+<?= $this->section('custom-css') ?>
+<script src="https://cdn.tiny.cloud/1/b69tdpiu66ovx82jjhzsf0eooi7hehgia7avmhbdiy1s6rx4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<?= $this->endSection() ?>
 <?= $this->section('navbar') ?>
 <?= $this->include('assets/navbar') ?>
 <?= $this->endSection() ?>
@@ -35,11 +37,11 @@
                         />
                       </div>
                       <div class="form-group">
-                        <label for="title">Brand</label>
+                        <label for="brand">Brand</label>
                         <input
                           type="text"
                           class="form-control bg-light"
-                          id="title"
+                          id="brand"
                          
                           name="brand"
                           value="<?=esc(old('brand',$response->msg->brand))?>"
@@ -47,35 +49,39 @@
                         />
                       </div>
                       <div class="form-group">
-                        <label for="title">Description </label>
-                        <input
-                          type="text"
+                        <label for="desc">Description </label>
+                       
+                        <textarea
+                          rows="5"
                           class="form-control bg-light"
-                          id="title"
+                          id="desc"
                          
                           name="desc"
-                          value="<?=esc(old('desc',$response->msg->desc))?>"
+                          value="<?= trim(esc(old('desc',$response->msg->desc)))?>"
                           required
-                        />
+                        ><?= old('desc',$response->msg->desc)?>
+                    </textarea>
                       </div>
                       <div class="form-group">
-                        <label for="title">Meta Description </label>
-                        <input
-                          type="text"
+                        <label for="meta_desc">Meta Description </label>
+                       
+                        <textarea
+                          rows="5"
                           class="form-control bg-light"
-                          id="title"
+                          id="meta_desc"
                          
                           name="meta_desc"
-                          value="<?=esc(old('meta_desc',$response->msg->meta_desc))?>"
+                          value="<?= trim(esc(old('meta_desc',$response->msg->meta_desc)))?>"
                           required
-                        />
+                        ><?= old('meta_desc',$response->msg->meta_desc)?>
+                    </textarea>
                       </div>
                       <div class="form-group">
-                        <label for="title">Meta Tags </label>
+                        <label for="meta_tag">Meta Tags </label>
                         <input
                           type="text"
                           class="form-control bg-light"
-                          id="title"
+                          id="meta_tag"
                          
                           name="meta_tag"
                           value="<?=esc(old('meta_tag',$response->msg->meta_tag))?>"
@@ -100,5 +106,13 @@
         <?= $this->include('assets/footer') ?>
         <?= $this->endSection() ?>
           <!-- partial:partials/_footer.html -->
-     
+          <?= $this->section('custom-js') ?>
+        <script>
+  tinymce.init({
+    selector: '#desc',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+  });
+</script>
+        <?= $this->endSection() ?>
 

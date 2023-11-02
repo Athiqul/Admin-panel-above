@@ -101,7 +101,7 @@
                           class="form-control text-light"
                           id="metadesc"
                          name="meta_desc"
-                         value="<?=esc(old('title'))?>"
+                         value="<?=esc(old('meta_desc'))?>"
                          required
                         ></textarea>
                       </div>
