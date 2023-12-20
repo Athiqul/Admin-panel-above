@@ -102,7 +102,7 @@ class Login extends BaseController
               try{
                 $response = $client->post($apiUrl,['debug' => true,'json' => $data]);
                 $bodyMsg=json_decode($response->getBody());
-               // dd($bodyMsg);
+                //dd($bodyMsg);
                 if($bodyMsg->errors==true)
                 {
                     return redirect()->back()->with('warning',$bodyMsg->msg)->withInput();
@@ -113,7 +113,7 @@ class Login extends BaseController
                     return redirect()->to('/admin')->with('success','Welcome to the system');
                 }
               }catch(Exception $ex){
-                dd($ex->getMessage());
+               // dd($ex->getMessage());
                // return redirect()->back()->with('errors',$ex->getMessage())->withInput();
               }
            }
